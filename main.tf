@@ -31,7 +31,7 @@ module "replicator" {
   l3_object_key     = "quinovas/s3-bucket-replicator/s3-bucket-replicator-0.0.1.zip"
   source            = "QuiNovas/lambdalambdalambda/aws"
   timeout           = 600
-  version           = "0.1.0"
+  version           = "0.2.0"
 }
 
 resource "aws_lambda_permission" "allow_bucket_execution" {
