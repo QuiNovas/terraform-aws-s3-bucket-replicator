@@ -14,8 +14,7 @@ variable "destination_bucket_obj_arns" {
 }
 
 variable "kms_key_arn" {
-  default     = ""
-  description = "The arn of the KMS key used to encrypt the environment variables. If not provided, one will be created"
+  description = "The arn of the KMS key used to encrypt the environment variables"
   type        = "string"
 }
 
