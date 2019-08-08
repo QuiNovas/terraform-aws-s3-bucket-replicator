@@ -18,6 +18,12 @@ variable "kms_key_arn" {
   type        = string
 }
 
+variable "prefix" {
+  default     = ""
+  description = "The prefix for the resources"
+  type        = string
+}
+
 variable "source_bucket" {
   description = "The bucket name or id to replicate."
   type        = string

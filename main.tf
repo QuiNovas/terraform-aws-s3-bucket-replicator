@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "replicator" {
-  name   = "LambdaLambdaLambdaReplicator"
+  name   = "${var.prefix}-LambdaLambdaLambdaReplicator"
   policy = data.aws_iam_policy_document.replicator.json
 }
 
@@ -10,7 +10,7 @@ module "replicator" {
   }
   handler     = "function.handler"
   kms_key_arn = var.kms_key_arn
-  name        = "s3-bucket-replicator"
+  name        = "${var.prefix}-s3-bucket-replicator"
   policy_arns = [
     aws_iam_policy.replicator.arn,
   ]
