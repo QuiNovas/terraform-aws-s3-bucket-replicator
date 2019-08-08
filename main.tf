@@ -1,5 +1,5 @@
 resource "aws_iam_policy" "replicator" {
-  name   = "LambdaLambdaLambdaReplicator"
+  name   = "${var.prefix}-LambdaLambdaLambdaReplicator"
   policy = data.aws_iam_policy_document.replicator.json
 }
 
