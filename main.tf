@@ -14,12 +14,11 @@ module "replicator" {
   policy_arns = [
     aws_iam_policy.replicator.arn,
   ]
-  policy_arns_count = 1
   runtime           = "python3.7"
   l3_object_key     = "quinovas/s3-bucket-replicator/s3-bucket-replicator-0.0.1.zip"
   source            = "QuiNovas/lambdalambdalambda/aws"
   timeout           = 600
-  version           = "0.2.0"
+  version           = "3.0.2"
 }
 
 resource "aws_lambda_permission" "allow_bucket_execution" {
