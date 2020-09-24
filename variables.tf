@@ -3,6 +3,14 @@ variable "dead_letter_arn" {
   type        = string
 }
 
+
+variable "description" {
+  description = "Description of s3 bucket replicator."
+  type        = string
+  default     = ""
+}
+
+
 variable "destination_bucket_ids" {
   description = "A list of bucket name/ids to replicate to."
   type        = list(string)
@@ -29,3 +37,8 @@ variable "source_bucket" {
   type        = string
 }
 
+variable "tags" {
+  default     = {}
+  description = "The map of string of keys and values"
+  type        = map
+}
