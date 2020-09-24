@@ -5,7 +5,7 @@ variable "dead_letter_arn" {
 
 
 variable "description" {
-  description = "Description of the dynamo firehose adapter ."
+  description = "Description of s3 bucket replicator."
   type        = string
   default     = ""
 }
