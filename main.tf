@@ -1,10 +1,12 @@
 resource "aws_iam_policy" "replicator" {
   name   = "${var.prefix}-LambdaLambdaLambdaReplicator"
   policy = data.aws_iam_policy_document.replicator.json
+  description = var.description
 }
 
 module "replicator" {
   dead_letter_arn = var.dead_letter_arn
+  description     = var.description
   environment_variables = {
     DESTINATION_BUCKETS = join(",", var.destination_bucket_ids)
   }
@@ -18,7 +20,8 @@ module "replicator" {
   l3_object_key     = "quinovas/s3-bucket-replicator/s3-bucket-replicator-0.0.1.zip"
   source            = "QuiNovas/lambdalambdalambda/aws"
   timeout           = 600
-  version           = "3.0.2"
+  tags              = var.tags
+  version           = "3.0.3"
 }
 
 resource "aws_lambda_permission" "allow_bucket_execution" {
