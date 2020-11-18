@@ -1,6 +1,6 @@
 resource "aws_iam_policy" "replicator" {
-  name   = "${var.prefix}-LambdaLambdaLambdaReplicator"
-  policy = data.aws_iam_policy_document.replicator.json
+  name        = "${var.prefix}-LambdaLambdaLambdaReplicator"
+  policy      = data.aws_iam_policy_document.replicator.json
   description = var.description
 }
 
@@ -16,12 +16,12 @@ module "replicator" {
   policy_arns = [
     aws_iam_policy.replicator.arn,
   ]
-  runtime           = "python3.7"
-  l3_object_key     = "quinovas/s3-bucket-replicator/s3-bucket-replicator-0.0.1.zip"
-  source            = "QuiNovas/lambdalambdalambda/aws"
-  timeout           = 600
-  tags              = var.tags
-  version           = "3.0.3"
+  runtime       = "python3.7"
+  l3_object_key = "quinovas/s3-bucket-replicator/s3-bucket-replicator-0.0.1.zip"
+  source        = "QuiNovas/lambdalambdalambda/aws"
+  timeout       = 600
+  tags          = var.tags
+  version       = "3.0.3"
 }
 
 resource "aws_lambda_permission" "allow_bucket_execution" {
