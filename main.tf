@@ -21,7 +21,7 @@ module "replicator" {
   source        = "QuiNovas/lambdalambdalambda/aws"
   timeout       = 600
   tags          = var.tags
-  version       = "3.0.5"
+  version       = "4.0.0"
 }
 
 resource "aws_lambda_permission" "allow_bucket_execution" {
