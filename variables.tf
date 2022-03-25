@@ -40,5 +40,5 @@ variable "source_bucket" {
 variable "tags" {
   default     = {}
   description = "The map of string of keys and values"
-  type        = map
+  type        = map(any)
 }
